@@ -11,17 +11,18 @@
  *}
 {include file="frontend/components/header.tpl" pageTitle="about.aboutContext"}
 
-<div id="main-content" class="page page_about">
+<div class="container">
+	<div id="main-content" class="page page_about">
 
-	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="about.aboutContext"}
+		{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="about.aboutContext"}
 
-	{* Page Title *}
-	<div class="page-header">
-		<h1>{translate key="about.aboutContext"}</h1>
-	</div>
-	{* /Page Title *}
+		{* Page Title *}
+		<div class="page-header">
+			<h1>{translate key="about.aboutContext"}</h1>
+		</div>
+		{* /Page Title *}
 
-	{$currentContext->getLocalizedData('about')}
-</div><!-- .page -->
-
+		{$currentContext->getLocalizedData('about')}
+	</div><!-- .page -->
+</div>
 {include file="common/frontend/footer.tpl"}

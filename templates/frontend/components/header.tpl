@@ -84,9 +84,11 @@
 				</li>
 
 				{* Custom "About" link *}
+				{if $issueExists}
 				<li class="nav-item">
-					<a class="nav-link" href="{$baseUrl}/about" title="{translate|escape key="navigation.about"}" style="color: #D8E6F6;">{translate key="navigation.about"}</a>
+					<a class="nav-link" href="{url page="about" op="index"}" title="{translate|escape key="navigation.about"}" style="color: #D8E6F6;">{translate key="navigation.about"}</a>
 				</li>
+				{/if}
 
 				{load_menu name="user" id="navigationUser" liClass="nav-item profile"}
 				</ul>
