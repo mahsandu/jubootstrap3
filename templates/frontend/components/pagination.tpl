@@ -14,28 +14,32 @@
  * @uses $total int The total number of items available
  *}
 
+ 
 {if $prevUrl || $nextUrl}
 	<nav aria-label="{translate|escape key="common.pagination.label"}">
-		<ul class="pager">
+		<ul class="pagination justify-content-center">
 			{if $prevUrl}
-				<li class="previous">
-					<a href="{$prevUrl}">
+				<li class="page-item">
+					<a class="page-link" href="{$prevUrl}" aria-label="{translate key="help.previous"}">
 						<span aria-hidden="true">&larr;</span>
 						{translate key="help.previous"}
 					</a>
 				</li>
 			{/if}
-			<li class="current">
-				{translate key="common.pagination" start=$showingStart end=$showingEnd total=$total}
+			<li class="page-item disabled">
+				<span class="page-link">
+					{translate key="common.pagination" start=$showingStart end=$showingEnd total=$total}
+				</span>
 			</li>
 			{if $nextUrl}
-			<li class="next">
-				<a class="next" href="{$nextUrl}">
-					{translate key="help.next"}
-					<span aria-hidden="true">&rarr;</span>
-				</a>
-			</li>
+				<li class="page-item">
+					<a class="page-link" href="{$nextUrl}" aria-label="{translate key="help.next"}">
+						{translate key="help.next"}
+						<span aria-hidden="true">&rarr;</span>
+					</a>
+				</li>
 			{/if}
 		</ul>
 	</nav>
 {/if}
+
