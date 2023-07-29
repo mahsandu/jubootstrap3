@@ -9,18 +9,30 @@
  *
  *}
 {include file="frontend/components/header.tpl"}
-
+<div class="container">
 <div id="main-site" class="page_index_site">
+	<!-- ======= Cta Section ======= -->
+	 {if $about}
+    <section id="cta" class="cta">
+      <div class="container">
 
-  {if $about}
-    <div class="about_site">
-      {$about|nl2br}
-    </div>
-  {/if}
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-left">
+            <p>{$about|strip_tags|nl2br}</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">Submit an Article</a>
+          </div>
+        </div>
 
-  <div class="journals">
-    <div class="page-header">
-      <h2>
+      </div>
+    </section><!-- End Cta Section -->
+	{/if}
+
+
+  <div class="journals row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="page-header w-100 mb-4">
+      <h2 style="font-size: 24px;">
         {translate key="context.contexts"}
       </h2>
     </div>
@@ -29,50 +41,51 @@
       <div class="no_journals">
         {translate key="site.noJournals"}
       </div>
-
     {else}
-      <ul class="list-unstyled">
-        {foreach from=$journals item=journal}
-          {capture assign="url"}{url journal=$journal->getPath()}{/capture}
-          {assign var="thumb" value=$journal->getLocalizedData('journalThumbnail')}
-          {assign var="description" value=$journal->getLocalizedDescription()}
-          <li class="media mb-4">
-            {if $thumb}
-              <a href="{$url|escape}">
-                <img class="img-thumbnail mr-3" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}" alt="{$thumb.altText|escape}">
-              </a>
-            {/if}
-            <div class="media-body">
-              <h3 class="mt-0">
+      {foreach from=$journals item=journal}
+        {capture assign="url"}{url journal=$journal->getPath()}{/capture}
+        {assign var="thumb" value=$journal->getLocalizedData('journalThumbnail')}
+        {assign var="description" value=$journal->getLocalizedDescription()}
+
+        <div class="col mb-4">
+          <div class="card h-100">
+            <a href="{$url|escape}">
+              {if $thumb}
+                <img class="card-img-top img-thumbnail" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}" alt="{$thumb.altText|escape}" width="300" height="450">
+              {else}
+                <img class="card-img-top img-thumbnail" src="path/to/placeholder-image.jpg" alt="Placeholder" width="300" height="450">
+              {/if}
+            </a>
+            <div class="card-body">
+              <h3 class="card-title" style="font-size: 20px;">
                 <a href="{$url|escape}" rel="bookmark">
                   {$journal->getLocalizedName()}
                 </a>
               </h3>
               {if $description}
-                <div class="description">
-                  {$description|nl2br}
-                </div>
+                <p class="card-text">
+                  {if strlen($description) > 200}
+                    {substr(strip_tags($description), 0, 200)|escape}...
+                  {else}
+                    {$description|strip_tags|escape}
+                  {/if}
+                </p>
               {/if}
-              <ul class="nav nav-pills">
-                <li class="nav-item">
-                  <a class="nav-link" href="{$url|escape}">
-                    {translate key="site.journalView"}
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{url|escape journal=$journal->getPath() page="issue" op="current"}">
-                    {translate key="site.journalCurrent"}
-                  </a>
-                </li>
-              </ul>
             </div>
-          </li>
-        {/foreach}
-      </ul>
+            <div class="card-footer d-flex justify-content-end">
+              <a class="btn btn-light text-shadow" href="{$url|escape}">
+                {translate key="site.journalView"}
+              </a>
+              <a class="btn btn-light text-shadow" href="{url|escape journal=$journal->getPath() page="issue" op="current"}">
+                {translate key="site.journalCurrent"}
+              </a>
+            </div>
+          </div>
+        </div>
+      {/foreach}
     {/if}
   </div>
-
 </div><!-- .page -->
-
+</div>
 
 {include file="frontend/components/footer.tpl"}
