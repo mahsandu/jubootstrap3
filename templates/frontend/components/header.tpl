@@ -52,8 +52,7 @@
 					<!-- Uncomment below if you prefer to use an image logo -->
 					<a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" class="img-fluid"></a>
 				</div>
-			
-
+				
 				
 				
 				
