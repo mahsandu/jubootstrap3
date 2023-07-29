@@ -15,7 +15,7 @@
  * @uses $showGalleyLinks bool Show galley links to users without access?
  *}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$issueIdentification}
-
+<div class="container">
 <div id="main-content" class="page page_issue">
 
 	{* Display a message if no current issue exists *}
@@ -28,7 +28,7 @@
 		{include file="frontend/components/breadcrumbs_issue.tpl" currentTitle=$issueIdentification}
 		{include file="frontend/objects/issue_toc.tpl"}
 	{/if}
-
+</div>
 </div>
 
 {include file="common/frontend/footer.tpl"}
