@@ -14,6 +14,7 @@
  * @uses $hasAccess bool Can this user access galleys for this context?
  * @uses $showGalleyLinks bool Show galley links to users without access?
  *}
+ {assign var="themePath" value=$baseUrl|cat:"/plugins/themes/bootstrap3/"}
 <div class="container issue-toc">
 
 	{* Indicate if this is only a preview *}
@@ -36,7 +37,7 @@
         {else}
             {assign var="issueDetailsCol" value="12"}
             <div class="col-md-4">
-                <img class="img-fluid" src="path/to/placeholder_image.jpg" alt="Placeholder Image">
+                <img class="img-fluid" src="{$themePath}assets/img/placeholder.png" alt="Placeholder Image">
             </div>
         {/if}
 
