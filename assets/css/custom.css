@@ -6,3 +6,15 @@
     background-color: #035BBC; /* Hover color for dropdown menu items */
     color: #D8E6F6; /* Text color on hover */
   }
+
+  .navbar a, .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 20px;
+    font-size: 13px;
+    color: #65534c;
+    white-space: nowrap;
+    text-transform: uppercase;
+    transition: 0.3s;
+}

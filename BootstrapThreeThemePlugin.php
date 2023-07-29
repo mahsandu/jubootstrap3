@@ -64,6 +64,7 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 		$this->addStyle('swiper', 'assets/vendor/swiper/swiper-bundle.min.css');
 		$this->addStyle('theme', 'assets/css/style.css');
 		$this->addStyle('custom', 'assets/css/custom.css');
+		$this->addStyle('custom', 'assets/css/ju.css');
 		
 		$locale = Locale::getLocale();
 		$localeMetadata = Locale::getMetadata($locale);

@@ -32,5 +32,6 @@
 
   <!-- Template Main CSS File -->
   <link href="{$themePath}assets/css/style.css" rel="stylesheet">
+  <link href="{$themePath}assets/css/ju.css" rel="stylesheet">
 
 </head>
