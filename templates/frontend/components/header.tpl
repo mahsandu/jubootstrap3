@@ -37,7 +37,7 @@
 
 			<header id="header" class="site-header">
 			{* User profile, login, etc, navigation menu*}
-				<nav class="navbar navbar-defatult fluid-navbar navbar-style1">
+				<nav class="navbar navbar-defatult fluid-navbar">
 					<div class="container-fluid">
 						<div class="navbar-header">
 							{* Logo or site title. Only use <h1> heading on the homepage.
