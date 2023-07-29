@@ -43,13 +43,14 @@
 			<div class="top-section bg-light jblue py-2">
 				<div class="container d-flex justify-content-between align-items-center">
 				<!-- Image on the left -->
-				<div class="logo">
-					<a href="{$homeUrl}"><img src="{$themePath}assets/img/jujms.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" height="150"></a>
+				<div>
+					<a href="{$homeUrl}"><img src="{$themePath}assets/img/jujms.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" class="img-fluid"></a>
 				</div>
 
 				<!-- Contact address on the right top -->
 				<div class="contact-address">
 					<p class="mb-0">Contact: contact@example.com | Phone: +123456789</p>
+
 				</div>
 				</div>
 			</div>
@@ -68,13 +69,9 @@
 
 
 			<div class="logo">
-			<!-- <h1 class="text-light"><a href="index.html">Flattern</a></h1> -->
+			<h1><a class="text-light float-start" href="{$homeUrl}">{$siteTitle|escape}</a></h1>
 			<!-- Uncomment below if you prefer to use an image logo -->
-			<a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" class="img-fluid"></a>
-			</div>
-
-			<div class="site-title collapse navbar-collapse" id="headerNavbar">
-			<h1><a class="text-jwhite" href="{$homeUrl}">{$siteTitle|escape}</a></h1>
+			<!-- <a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$siteName|escape}" title="{$siteTitle|escape}" class="img-fluid"></a> -->
 			</div>
 
 			{* User navigation *}
@@ -104,4 +101,3 @@
 		{* Wrapper for page content and sidebars *}
 		<div class="pkp_structure_content container">
 			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-8" role="main">
-			<div align="center"><h3 align="center" class="text-danger">Welcome to JU Journal Mangement System</h3> </div>
