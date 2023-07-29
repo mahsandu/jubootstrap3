@@ -15,18 +15,19 @@
  *}
 
 <nav class="cmp_breadcrumbs" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
-	<ol class="breadcrumb">
-		<li>
-			<a href="{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}">
-				{translate key="common.homepageNavigationLabel"}
-			</a>
-		</li>
-		<li class="active">
-			{if $currentTitleKey}
-				{translate key=$currentTitleKey}
-			{else}
-				{$currentTitle|escape}
-			{/if}
-		</li>
-	</ol>
+  <ol class="breadcrumb bg-light mb-0 py-1">
+    <li class="breadcrumb-item">
+      <a href="{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}" class="text-dark">
+        {translate key="common.homepageNavigationLabel"}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {if $currentTitleKey}
+        {translate key=$currentTitleKey}
+      {else}
+        {$currentTitle|escape}
+      {/if}
+    </li>
+  </ol>
 </nav>
+

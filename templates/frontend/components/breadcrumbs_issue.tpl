@@ -14,24 +14,24 @@
  * @uses $currentTitleKey string Translation key for title of current page.
  *}
 
-<nav class="cmp_breadcrumbs" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
-	<ol class="breadcrumb">
-		<li>
-			<a href="{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}">
-				{translate key="common.homepageNavigationLabel"}
-			</a>
-		</li>
-		<li>
-			<a href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive"}">
-				{translate key="navigation.archives"}
-			</a>
-		</li>
-		<li class="active">
-			{if $currentTitleKey}
-				{translate key=$currentTitleKey}
-			{else}
-				{$currentTitle|escape}
-			{/if}
-		</li>
-	</ol>
+<nav class="cmp_breadcrumbs bg-light" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
+  <ol class="breadcrumb mb-0 py-1">
+    <li class="breadcrumb-item">
+      <a href="{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}" class="text-dark">
+        {translate key="common.homepageNavigationLabel"}
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive"}" class="text-dark">
+        {translate key="navigation.archives"}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {if $currentTitleKey}
+        {translate key=$currentTitleKey}
+      {else}
+        {$currentTitle|escape}
+      {/if}
+    </li>
+  </ol>
 </nav>
