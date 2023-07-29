@@ -20,22 +20,39 @@
  *}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
 
+
+  <!-- ======= Cta Section ======= -->
+  {if $journalDescription or $homepageImage}
+  <div class="container-fluid">
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start text-justify">
+            <p>{$journalDescription|strip_tags|nl2br}</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            {if $homepageImage}
+			<div class="homepage-image">
+				<img class="img-fluid" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+			</div>
+			{/if}
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+</div>
+{/if}
+
 <div class="container">
 	<div id="main-content" class="page_index_journal">
 
 		{call_hook name="Templates::Index::journal"}
+		
+		
 
-		{if $homepageImage}
-			<div class="homepage-image">
-				<img class="img-fluid" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
-			</div>
-		{/if}
-
-		{if $journalDescription}
-			<div class="journal-description">
-				{$journalDescription}
-			</div>
-		{/if}
+		
 
 		<!-- Announcements -->
 		{if $numAnnouncementsHomepage && $announcements|count}
