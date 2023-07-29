@@ -39,49 +39,64 @@
 			*}
 			{* Header *}
 
+		<div class="d-flex flex-column">
+			<div class="top-section bg-light jblue py-2">
+				<div class="container d-flex justify-content-between align-items-center">
+				<!-- Image on the left -->
+				<div class="logo">
+					<a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" height="150"></a>
+				</div>
+
+				<!-- Contact address on the right top -->
+				<div class="contact-address">
+					<p class="mb-0">Contact: contact@example.com | Phone: +123456789</p>
+				</div>
+				</div>
+			</div>
+		</div>
 		<header id="header" class="d-flex align-items-center" style="background-color: #035BBC;">
-  <div class="container d-flex justify-content-between">
-  
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon">
-		<svg class="bi" width="30" height="30" fill="white">
-		<use xlink:href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/icons/list.svg#list"></use>
-		</svg>
-	</span>
-	</button>
+		<div class="container d-flex justify-content-between">
+		
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon">
+				<svg class="bi" width="30" height="30" fill="white">
+				<use xlink:href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/icons/list.svg#list"></use>
+				</svg>
+			</span>
+			</button>
 
 
 
-    <div class="logo">
-      <!-- <h1 class="text-light"><a href="index.html">Flattern</a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="{$homeUrl}"><img src="{$themePath}assets/img/logo-white.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" class="img-fluid"></a>
-    </div>
+			<div class="logo">
+			<!-- <h1 class="text-light"><a href="index.html">Flattern</a></h1> -->
+			<!-- Uncomment below if you prefer to use an image logo -->
+			<a href="{$homeUrl}"><img src="{$themePath}assets/img/logo-white.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" class="img-fluid"></a>
+			</div>
 
-    <div class="site-title collapse navbar-collapse" id="headerNavbar">
-      <h1 class="text-light"><a href="{$homeUrl}" style="color: #D8E6F6; text-decoration: none;">{$siteTitle|escape}</a></h1>
-    </div>
+			<div class="site-title collapse navbar-collapse" id="headerNavbar">
+			<h1 class="text-light"><a href="{$homeUrl}">{$siteTitle|escape}</a></h1>
+			</div>
 
-    {* User navigation *}
-    <nav class="usernav navbar navbar-expand-lg navbar-light" aria-label="{translate|escape key="common.navigation.user"}">
-      <div class="container-fluid">
-        <ul class="navbar-nav">
-          {* Custom "Home" link *}
-          <li class="nav-item">
-            <a class="nav-link" href="{$baseUrl}" title="{translate|escape key="navigation.home"}" style="color: #D8E6F6;">{translate key="navigation.home"}</a>
-          </li>
+			{* User navigation *}
+			<nav class="usernav navbar navbar-expand-lg navbar-light" aria-label="{translate|escape key="common.navigation.user"}">
+			<div class="container-fluid">
+				<ul class="navbar-nav">
+				{* Custom "Home" link *}
+				<li class="nav-item">
+					<a class="nav-link" href="{$baseUrl}" title="{translate|escape key="navigation.home"}" style="color: #D8E6F6;">{translate key="navigation.home"}</a>
+				</li>
 
-          {* Custom "About" link *}
-          <li class="nav-item">
-            <a class="nav-link" href="{$baseUrl}/about" title="{translate|escape key="navigation.about"}" style="color: #D8E6F6;">{translate key="navigation.about"}</a>
-          </li>
+				{* Custom "About" link *}
+				<li class="nav-item">
+					<a class="nav-link" href="{$baseUrl}/about" title="{translate|escape key="navigation.about"}" style="color: #D8E6F6;">{translate key="navigation.about"}</a>
+				</li>
 
-          {load_menu name="user" id="navigationUser" liClass="nav-item profile"}
-        </ul>
-      </div>
-    </nav>
-  </div>
-</header>
+				{load_menu name="user" id="navigationUser" liClass="nav-item profile"}
+				</ul>
+			</div>
+			</nav>
+		</div>
+		</header>
 
 
 		
