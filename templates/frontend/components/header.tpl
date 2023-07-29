@@ -27,18 +27,18 @@
 
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}">
 	<div class="pkp_structure_page">
-		<div class="bg-info">
-			<nav id="accessibility-nav" class="sr-only" role="navigation" aria-label="{translate|escape key="plugins.themes.bootstrap3.accessible_menu.label"}">
-				<ul>
-				<li><a href="#main-navigation">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_navigation"}</a></li>
-				<li><a href="#main-content">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_content"}</a></li>
-				<li><a href="#sidebar">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.sidebar"}</a></li>
-				</ul>
-			</nav>
-
+		{** <div class="bg-info">
+			 <nav id="accessibility-nav" class="sr-only" role="navigation" aria-label="{translate|escape key="plugins.themes.bootstrap3.accessible_menu.label"}">
+			// 	<ul>
+			// 	<li><a href="#main-navigation">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_navigation"}</a></li>
+			// 	<li><a href="#main-content">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_content"}</a></li>
+			// 	<li><a href="#sidebar">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.sidebar"}</a></li>
+			// 	</ul>
+			// </nav>
+			*}
 			{* Header *}
 
-			<header id="header" class="site-header">
+		<header id="header" class="d-flex align-items-center">
 			{* User profile, login, etc, navigation menu*}
 				<nav class="navbar navbar-defatult fluid-navbar">
 					<div class="container-fluid">
@@ -111,8 +111,8 @@
 				
 				
 				
-			</header>
-		</div> 
+		</header>
+		
 
 		{* Wrapper for page content and sidebars *}
 		<div class="pkp_structure_content container">
