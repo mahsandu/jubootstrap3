@@ -28,21 +28,21 @@
     </section><!-- End Cta Section -->
   {/if}
 </div>
+<!-- ======= Cta Section ======= -->
+<!-- ======= journals display Section ======= -->
+<div class="container">
+  	<div class="journals row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+		<div class="page-header w-100 mb-4">
+		<h2 style="font-size: 24px;">
+			{translate key="context.contexts"}
+		</h2>
+		</div>
 
-
-
-  <div class="journals row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    <div class="page-header w-100 mb-4">
-      <h2 style="font-size: 24px;">
-        {translate key="context.contexts"}
-      </h2>
-    </div>
-
-    {if !count($journals)}
+    	{if !count($journals)}
       <div class="no_journals">
         {translate key="site.noJournals"}
       </div>
-    {else}
+    	{else}
       {foreach from=$journals item=journal}
         {capture assign="url"}{url journal=$journal->getPath()}{/capture}
         {assign var="thumb" value=$journal->getLocalizedData('journalThumbnail')}
@@ -54,7 +54,7 @@
               {if $thumb}
                 <img class="card-img-top img-thumbnail" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}" alt="{$thumb.altText|escape}" width="300" height="450">
               {else}
-                <img class="card-img-top img-thumbnail" src="path/to/placeholder-image.jpg" alt="Placeholder" width="300" height="450">
+                <img class="card-img-top img-fluid" src="path/to/placeholder-image.jpg" alt="Placeholder" width="250" height="300">
               {/if}
             </a>
             <div class="card-body">
@@ -83,10 +83,10 @@
             </div>
           </div>
         </div>
-      {/foreach}
-    {/if}
-  </div>
+      	{/foreach}
+    	{/if}
+  	</div>
 </div><!-- .page -->
-</div>
+<!-- ======= journals display Section ======= -->
 
 {include file="frontend/components/footer.tpl"}
