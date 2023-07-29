@@ -48,22 +48,29 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 		]);
 
 		// Determine the path to the glyphicons font in Bootstrap
-		$iconFontPath = Application::get()->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/bootstrap/fonts/';
+		// $iconFontPath = Application::get()->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/bootstrap/fonts/';
+		// Add Google Fonts link
+		$this->addStyle(
+		'Open-Sans',
+		'//fonts.googleapis.com/css?family=Open+Sans',
+		array('baseUrl' => 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet'));
 
-		$bootstrapTheme = $this->getOption('bootstrapTheme');
-		if (empty($bootstrapTheme) || $bootstrapTheme === 'bootstrap3') {
-			$this->addStyle('bootstrap', 'styles/bootstrap.less');
-			$this->modifyStyle('bootstrap', ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
-		} else {
-			$this->addStyle('bootstrapTheme-' . $bootstrapTheme, 'styles/' . $bootstrapTheme . '.less');
-			$this->modifyStyle('bootstrapTheme-' . $bootstrapTheme, ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
-		}
-
+		$this->addStyle('animate', 'assets/vendor/animate.css/animate.min.css');
+		$this->addStyle('aos', 'assets/vendor/aos/aos.css');
+		$this->addStyle('bootstrap', 'assets/vendor/bootstrap/css/bootstrap.min.css');
+		$this->addStyle('icons', 'assets/vendor/bootstrap-icons/bootstrap-icons.css');
+		$this->addStyle('boxicons', 'assets/vendor/boxicons/css/boxicons.min.css');
+		$this->addStyle('glightbox', 'assets/vendor/glightbox/css/glightbox.min.css');
+		$this->addStyle('swiper', 'assets/vendor/swiper/swiper-bundle.min.css');
+		$this->addStyle('theme', 'assets/css/style.css');
+		$this->addStyle('custom', 'assets/css/custom.css');
+		
 		$locale = Locale::getLocale();
 		$localeMetadata = Locale::getMetadata($locale);
 		if ($localeMetadata->isRightToLeft() === 'rtl') {
-			$this->addStyle('bootstrap-rtl', 'styles/bootstrap-rtl.min.css');
+			$this->addStyle('bootstrap', 'assets/vendor/bootstrap/css/bootstrap-rtl.min.css');
 		}
+		
 
 		// Load jQuery from a CDN or, if CDNs are disabled, from a local copy.
 		$min = Config::getVar('general', 'enable_minified') ? '.min' : '';
@@ -77,7 +84,18 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 		$this->addScript('jQueryTagIt', $request->getBaseUrl() . '/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js', array('baseUrl' => ''));
 
 		// Load Bootstrap
-		$this->addScript('bootstrap', 'bootstrap/js/bootstrap.min.js');
+		$this->addScript('aos', 'assets/vendor/aos/aos.js');
+  		$this->addScript('bootstrap', 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js');
+		$this->addScript('glightbox', 'assets/vendor/glightbox/js/glightbox.min.js');
+		$this->addScript('isotope', 'assets/vendor/isotope-layout/isotope.pkgd.min.js');
+		$this->addScript('swiper', 'assets/vendor/swiper/swiper-bundle.min.js');
+		$this->addScript('waypoint', 'assets/vendor/waypoints/noframework.waypoints.js');
+		$this->addScript('validate', 'assets/vendor/php-email-form/validate.js');
+
+		// Template Main JS File 
+		$this->addScript('aos', 'assets/js/main.js');
+
+
 
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
