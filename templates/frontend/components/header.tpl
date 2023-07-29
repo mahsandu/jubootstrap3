@@ -13,6 +13,7 @@
  *}
 
 {* Determine whether a logo or title string is being displayed *}
+{assign var="themePath" value=$baseUrl|cat:"/plugins/themes/bootstrap3/"}
 {assign var="showingLogo" value=true}
 {if $displayPageHeaderTitle && !$displayPageHeaderLogo && is_string($displayPageHeaderTitle)}
 	{assign var="showingLogo" value=false}
@@ -39,74 +40,19 @@
 			{* Header *}
 
 		<header id="header" class="d-flex align-items-center">
-			{* User profile, login, etc, navigation menu*}
-				<nav class="navbar navbar-defatult fluid-navbar">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							{* Logo or site title. Only use <h1> heading on the homepage.
+			<div class="container d-flex justify-content-between">
+				{* Logo or site title. Only use <h1> heading on the homepage.
 							Otherwise that should go to the page title. *}
-							{if $requestedOp == 'index'}
-								<h1 class="site-name">
-							{else}
-								<div class="site-name">
-							{/if}
-								{capture assign="homeUrl"}
+				{capture assign="homeUrl"}
 									{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}
 								{/capture}
-								{if $displayPageHeaderLogo}
-									<a href="{$homeUrl}" class="navbar-brand">
-										<img class="logo-img" style="background-color: white; padding: 5px; border-radius: 10px; border-color: black; border: 2px solid #eee;" height="60px" src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
-									</a>
-								{elseif $displayPageHeaderTitle}
-									<a href="{$homeUrl}" class="navbar-brand">{$displayPageHeaderTitle}</a>
-								{else}
-									<a href="{$homeUrl}" class="navbar-brand">
-										<img class="logo-img" style="background-color: white;" height="60px" src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" />
-									</a>
-								{/if}
-							{if $requestedOp == 'index'}
-								</h1>
-							{else}
-								</div>
-							{/if}
-							{* Mobile hamburger menu *}
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
 
-							{* Primary site navigation *}
-							{capture assign="primaryMenu"}
-								{load_menu name="primary" id="main-navigation" ulClass="navbar-nav nav navbar-right"}
-								{load_menu name="user" id="navigationUser" ulClass="navbar-nav nav navbar-right"}
-							{/capture}
-
-
-
-							{if !empty(trim($primaryMenu)) || $currentContext}
-								<div id="main-nav" class="collapse navbar-collapse" aria-label="{translate|escape key="common.navigation.site"}">
-									{* Search form *}
-									{if $currentContext}
-										<div class="pull-md-right">
-											{include file="frontend/components/searchForm_simple.tpl"}
-										</div>
-									{/if}
-									
-
-									
-									
-									{* Primary navigation menu for current application *}
-									{$primaryMenu}
-									
-								</div>
-							{/if}
-
-					</div>
-				
-				</nav>
+				<div class="logo">
+					<!-- <h1 class="text-light"><a href="index.html">Flattern</a></h1> -->
+					<!-- Uncomment below if you prefer to use an image logo -->
+					<a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" class="img-fluid"></a>
+				</div>
+			
 
 				
 				
