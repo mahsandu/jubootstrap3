@@ -39,42 +39,41 @@
 			*}
 			{* Header *}
 
-		<header id="header" class="d-flex align-items-center">
-			<div class="container d-flex justify-content-between">
-				{* Logo or site title. Only use <h1> heading on the homepage.
-							Otherwise that should go to the page title. *}
-				{capture assign="homeUrl"}
-									{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}
-								{/capture}
+		<header id="header" class="d-flex align-items-center" style="background-color: #035BBC;">
+  <div class="container d-flex justify-content-between">
+    {* Logo or site title. Only use <h1> heading on the homepage.
+      Otherwise, that should go to the page title. *}
+    {capture assign="homeUrl"}
+      {url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}
+    {/capture}
 
-				<div class="logo">
-					<!-- <h1 class="text-light"><a href="index.html">Flattern</a></h1> -->
-					<!-- Uncomment below if you prefer to use an image logo -->
-					<a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" class="img-fluid"></a>
-				</div>
-				
-				{* User navigation *}
-				<nav class="usernav navbar navbar-expand-lg navbar-light" aria-label="{translate|escape key="common.navigation.user"}">
-				<div class="container-fluid">
-					<ul class="navbar-nav">
-					{* Custom "Home" link *}
-					<li class="nav-item">
-						<a class="nav-link" href="{$baseUrl}" title="{translate|escape key="navigation.home"}">{translate key="navigation.home"}</a>
-					</li>
-					
-					{* Custom "About" link *}
-					<li class="nav-item">
-						<a class="nav-link" href="{$baseUrl}/about" title="{translate|escape key="navigation.about"}">{translate key="navigation.about"}</a>
-					</li>
+    <div class="logo">
+      <!-- <h1 class="text-light"><a href="index.html">Flattern</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" class="img-fluid"></a>
+    </div>
 
-					{load_menu name="user" id="navigationUser" liClass="nav-item profile"}
-					</ul>
-				</div>
-				</nav>
+    {* User navigation *}
+    <nav class="usernav navbar navbar-expand-lg navbar-light" aria-label="{translate|escape key="common.navigation.user"}">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          {* Custom "Home" link *}
+          <li class="nav-item">
+            <a class="nav-link" href="{$baseUrl}" title="{translate|escape key="navigation.home"}" style="color: #D8E6F6;">{translate key="navigation.home"}</a>
+          </li>
 
-				
-				
-		</header>
+          {* Custom "About" link *}
+          <li class="nav-item">
+            <a class="nav-link" href="{$baseUrl}/about" title="{translate|escape key="navigation.about"}" style="color: #D8E6F6;">{translate key="navigation.about"}</a>
+          </li>
+
+          {load_menu name="user" id="navigationUser" liClass="nav-item profile"}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
 		
 
 		{* Wrapper for page content and sidebars *}
