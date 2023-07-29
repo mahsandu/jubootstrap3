@@ -53,7 +53,25 @@
 					<a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" class="img-fluid"></a>
 				</div>
 				
-				
+				{* User navigation *}
+				<nav class="usernav navbar navbar-expand-lg navbar-light" aria-label="{translate|escape key="common.navigation.user"}">
+				<div class="container-fluid">
+					<ul class="navbar-nav">
+					{* Custom "Home" link *}
+					<li class="nav-item">
+						<a class="nav-link" href="{$baseUrl}" title="{translate|escape key="navigation.home"}">{translate key="navigation.home"}</a>
+					</li>
+					
+					{* Custom "About" link *}
+					<li class="nav-item">
+						<a class="nav-link" href="{$baseUrl}/about" title="{translate|escape key="navigation.about"}">{translate key="navigation.about"}</a>
+					</li>
+
+					{load_menu name="user" id="navigationUser" liClass="nav-item profile"}
+					</ul>
+				</div>
+				</nav>
+
 				
 				
 		</header>
