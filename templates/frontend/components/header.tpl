@@ -50,7 +50,10 @@
     <div class="logo">
       <!-- <h1 class="text-light"><a href="index.html">Flattern</a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" class="img-fluid"></a>
+      <a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$siteName|escape}" title="{$siteName|escape}" class="img-fluid text-light"></a>
+    </div>
+	<div class="site-title">
+      <h1 class="text-light"><a href="{$homeUrl}" style="color: #D8E6F6; text-decoration: none;">{$siteTitle|escape}</a></h1>
     </div>
 
     {* User navigation *}
