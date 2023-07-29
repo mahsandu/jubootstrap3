@@ -9,15 +9,14 @@
  *
  *}
 {include file="frontend/components/header.tpl"}
-<div class="container">
-<div id="main-site" class="page_index_site">
-	<!-- ======= Cta Section ======= -->
-	 {if $about}
+<div class="container-fluid">
+  <!-- ======= Cta Section ======= -->
+  {if $about}
     <section id="cta" class="cta">
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-9 text-center text-lg-left">
+          <div class="col-lg-9 text-center text-lg-start text-justify">
             <p>{$about|strip_tags|nl2br}</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
@@ -27,7 +26,9 @@
 
       </div>
     </section><!-- End Cta Section -->
-	{/if}
+  {/if}
+</div>
+
 
 
   <div class="journals row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
