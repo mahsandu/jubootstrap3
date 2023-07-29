@@ -44,7 +44,7 @@
 				<div class="container d-flex justify-content-between align-items-center">
 				<!-- Image on the left -->
 				<div>
-					<a href="{$homeUrl}"><img src="{$themePath}assets/img/jujms.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" class="img-fluid"></a>
+					<a href="{$baseUrl}"><img src="{$themePath}assets/img/jujms.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" class="img-fluid"></a>
 				</div>
 
 				<!-- Contact address on the right top -->
@@ -69,7 +69,7 @@
 
 
 			<div class="logo">
-			<h1><a class="text-light float-start" href="{$baseUrl}">{$siteTitle|escape}</a></h1>
+			<h1><a class="text-light float-start" href="{$homeUrl}">{$siteTitle|escape}</a></h1>
 			<!-- Uncomment below if you prefer to use an image logo -->
 			<!-- <a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$siteName|escape}" title="{$siteTitle|escape}" class="img-fluid"></a> -->
 			</div>
