@@ -41,18 +41,24 @@
 
 		<header id="header" class="d-flex align-items-center" style="background-color: #035BBC;">
   <div class="container d-flex justify-content-between">
-    {* Logo or site title. Only use <h1> heading on the homepage.
-      Otherwise, that should go to the page title. *}
-    {capture assign="homeUrl"}
-      {url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}
-    {/capture}
+  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon">
+		<svg class="bi" width="30" height="30" fill="white">
+		<use xlink:href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/icons/list.svg#list"></use>
+		</svg>
+	</span>
+	</button>
+
+
 
     <div class="logo">
       <!-- <h1 class="text-light"><a href="index.html">Flattern</a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="{$homeUrl}"><img src="{$themePath}assets/img/logo.png" alt="{$siteName|escape}" title="{$siteName|escape}" class="img-fluid text-light"></a>
+      <a href="{$homeUrl}"><img src="{$themePath}assets/img/logo-white.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" class="img-fluid"></a>
     </div>
-	<div class="site-title">
+
+    <div class="site-title collapse navbar-collapse" id="headerNavbar">
       <h1 class="text-light"><a href="{$homeUrl}" style="color: #D8E6F6; text-decoration: none;">{$siteTitle|escape}</a></h1>
     </div>
 
@@ -76,6 +82,7 @@
     </nav>
   </div>
 </header>
+
 
 		
 
