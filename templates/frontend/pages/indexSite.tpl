@@ -12,7 +12,7 @@
 
 <div id="main-site" class="page_index_site">
 
-<!--	{if $about}
+{if $about}
 		<div class="about_site">
 			{$about|nl2br}
 		</div>
@@ -24,7 +24,6 @@
 				{translate key="context.contexts"}
 			</h2>
 		</div>
--->
 
 
 		{if !count($journals)}
