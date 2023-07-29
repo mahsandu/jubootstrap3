@@ -18,6 +18,7 @@
  *       homepage
  * @uses $issue Issue Current issue
  *}
+
 {include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
 
 

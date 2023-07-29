@@ -16,13 +16,13 @@
 
 	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="about.submissions"}
 
-	{* Page Title *}
+	<!-- Page Title -->
 	<div class="page-header">
 		<h1>{translate key="about.submissions"}</h1>
 	</div>
-	{* /Page Title *}
+	<!-- /Page Title -->
 
-	{* Login/register prompt *}
+	<!-- Login/register prompt -->
 	{if $isUserLoggedIn}
 		{capture assign="newSubmission"}<a href="{url page="submission" op="wizard"}">{translate key="about.onlineSubmissions.newSubmission"}</a>{/capture}
 		{capture assign="viewSubmissions"}<a href="{url page="submissions"}">{translate key="about.onlineSubmissions.viewSubmissions"}</a>{/capture}
@@ -36,8 +36,9 @@
 			{translate key="about.onlineSubmissions.registrationRequired" login=$login register=$register}
 		</div>
 	{/if}
+	<!-- /Login/register prompt -->
 
-	{* Author Guidelines *}
+	<!-- Author Guidelines -->
 	{if $currentJournal->getLocalizedData('authorGuidelines')}
 		<div class="author_guidelines">
 			<h2 class="page-header">
@@ -47,9 +48,9 @@
 			{$currentJournal->getLocalizedData('authorGuidelines')}
 		</div>
 	{/if}
-	{* /Author Guidelines *}
+	<!-- /Author Guidelines -->
 
-	{* Submission Checklist *}
+	<!-- Submission Checklist -->
 	{if $submissionChecklist}
 		<div class="submission_checklist">
 			<h2 class="page-header">
@@ -59,9 +60,9 @@
 			{$submissionChecklist}
 		</div>
 	{/if}
-	{* /Submission Checklist *}
+	<!-- /Submission Checklist -->
 
-	{* Copyright Notice *}
+	<!-- Copyright Notice -->
 	{if $currentJournal->getLocalizedData('copyrightNotice')}
 		<div class="copyright-notice">
 			<h2 class="page-header">
@@ -71,8 +72,9 @@
 			{$currentJournal->getLocalizedData('copyrightNotice')}
 		</div>
 	{/if}
-	{* /Copyright Notice *}
+	<!-- /Copyright Notice -->
 
 </div><!-- .page -->
+
 
 {include file="common/frontend/footer.tpl"}

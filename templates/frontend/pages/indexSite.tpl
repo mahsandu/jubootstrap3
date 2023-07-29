@@ -8,6 +8,7 @@
  * Site index.
  *
  *}
+  {assign var="themePath" value=$baseUrl|cat:"/plugins/themes/bootstrap3/"}
 {include file="frontend/components/header.tpl"}
 <div class="container-fluid">
   <!-- ======= Cta Section ======= -->
@@ -54,7 +55,7 @@
               {if $thumb}
                 <img class="card-img-top img-thumbnail" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}" alt="{$thumb.altText|escape}" width="300" height="450">
               {else}
-                <img class="card-img-top img-fluid" src="path/to/placeholder-image.jpg" alt="Placeholder" width="250" height="300">
+                <img class="card-img-top img-fluid" src="{$themePath}assets/img/placeholder.png" alt="Placeholder" width="250" height="300">
               {/if}
             </a>
             <div class="card-body">
