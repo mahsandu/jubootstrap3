@@ -14,6 +14,7 @@
  * @uses $showingEnd int The number of the last item on this page
  * @uses $total int Count of all published monographs
  *}
+
 {capture assign="pageTitle"}
 	{if $prevPage}
 		{translate key="archive.archivesPageNumber" pageNumber=$prevPage+1}
@@ -23,41 +24,44 @@
 {/capture}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$pageTitle}
 
-<div id="main-content" class="page page_issue_archive">
-	{include file="frontend/components/breadcrumbs.tpl" currentTitle=$pageTitle}
+<div class="container">
+	<div id="main-content" class="page page_issue_archive">
+		{include file="frontend/components/breadcrumbs.tpl" currentTitle=$pageTitle}
 
-	{* No issues have been published *}
-	{if empty($issues)}
-		<div class="alert alert-info" role="alert">
-			{translate key="current.noCurrentIssueDesc"}
-		</div>
-	{else}
+		{* No issues have been published *}
+		{if empty($issues)}
+			<div class="alert alert-info" role="alert">
+				{translate key="current.noCurrentIssueDesc"}
+			</div>
+		{else}
 
-		{* List issues *}
-		<div class="issues media-list">
-			{foreach from=$issues item="issue"}
-				{include file="frontend/objects/issue_summary.tpl"}
-			{/foreach}
-		</div>
+			{* List issues *}
+			<div class="issues media-list">
+				{foreach from=$issues item="issue"}
+					{include file="frontend/objects/issue_summary.tpl"}
+				{/foreach}
+			</div>
 
-		{* Pagination *}
-		{if $prevPage > 1}
-			{capture assign=prevUrl}{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive" path=$prevPage}{/capture}
-		{elseif $prevPage === 1}
-			{capture assign=prevUrl}{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive"}{/capture}
+			{* Pagination *}
+			{if $prevPage > 1}
+				{capture assign=prevUrl}{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive" path=$prevPage}{/capture}
+			{elseif $prevPage === 1}
+				{capture assign=prevUrl}{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive"}{/capture}
+			{/if}
+			{if $nextPage}
+				{capture assign=nextUrl}{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive" path=$nextPage}{/capture}
+			{/if}
+			{include
+				file="frontend/components/pagination.tpl"
+				prevUrl=$prevUrl
+				nextUrl=$nextUrl
+				showingStart=$showingStart
+				showingEnd=$showingEnd
+				total=$total
+			}
 		{/if}
-		{if $nextPage}
-			{capture assign=nextUrl}{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive" path=$nextPage}{/capture}
-		{/if}
-		{include
-			file="frontend/components/pagination.tpl"
-			prevUrl=$prevUrl
-			nextUrl=$nextUrl
-			showingStart=$showingStart
-			showingEnd=$showingEnd
-			total=$total
-		}
-	{/if}
-</div>
+	</div>
+</div><!-- .container -->
+
 
 {include file="common/frontend/footer.tpl"}
