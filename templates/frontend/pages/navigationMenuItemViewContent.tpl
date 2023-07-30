@@ -9,15 +9,17 @@
  *}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$title}
 
-<div id="main-content" class="page page_about">
+<div class="container">
+	<div id="main-content" class="page page_about">
 
-	{* Page Title *}
-	<div class="page-header">
-		<h1>{$title|escape}</h1>
-	</div>
-	{* /Page Title *}
+		{* Page Title *}
+		<div class="page-header">
+			<h1>{$title|escape}</h1>
+		</div>
+		{* /Page Title *}
 
-	{$content}
-</div><!-- .page -->
+		{$content}
+	</div><!-- .page -->
+</div><!-- .container -->
 
 {include file="frontend/components/footer.tpl"}
