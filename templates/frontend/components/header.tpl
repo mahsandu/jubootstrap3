@@ -47,11 +47,23 @@
 					<a href="{$baseUrl}"><img src="{$themePath}assets/img/jujms.png" alt="{$siteTitle|escape}" title="{$siteTitle|escape}" class="img-fluid"></a>
 				</div>
 
+				{capture assign="searchUrl"}{url page="search"}{/capture}
+				<div class="search-box-container">
+					<form class="d-flex ms-auto" action="{url page="search"}" method="get">
+					<div class="input-group">
+						<input type="text" class="form-control bg-white border-primary" name="query" placeholder="{translate key="common.search"}" aria-label="{translate key="common.search"}">
+						<button class="btn btn-outline-primary" type="submit">
+						<i class="bi bi-search"></i>
+						</button>
+					</div>
+					</form>
+				</div>
+
 				<!-- Contact address on the right top -->
 				<div class="contact-address d-flex align-items-center">
 					<i class="bi bi-envelope d-flex align-items-center"><a href="mailto:library@juniv.edu">library@juniv.edu</a></i>
 					<i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:02224491045-51">02224491045-51</a></i>
-				</div>
+				</div>	
 				</div>
 			</div>
 		</div>
