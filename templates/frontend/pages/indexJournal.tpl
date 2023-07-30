@@ -29,8 +29,8 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-9 text-center text-lg-start text-justify">
-            <p>{$journalDescription|strip_tags|nl2br}</p>
+          <div class="col-lg-9 text-center text-lg-start">
+            <p class="text-justify">{$journalDescription|strip_tags|nl2br}</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
             {if $homepageImage}

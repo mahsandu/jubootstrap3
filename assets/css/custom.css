@@ -7,7 +7,7 @@
     color: #D8E6F6; /* Text color on hover */
   }
 
-  .navbar a, .navbar a:focus {
+  /* .navbar a, .navbar a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,6 +17,11 @@
     white-space: nowrap;
     text-transform: uppercase;
     transition: 0.3s;
+} */
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
 }
 /* for registration page */
 /* Custom checkbox styles */

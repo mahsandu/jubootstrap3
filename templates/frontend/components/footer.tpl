@@ -22,36 +22,23 @@
     {/if}
 {/if}
 
-<footer id="footer" class="footer">
-    <!--Footer Top-->
-    <!-- (Add your footer top content here if needed) -->
-    
-    <!--Footer Bottom-->
-    <section class="site-footer-bottom bg-dark text-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-lg-6 widget-footer">
-                <p>Copyright &copy; Jahangirnagar University. All rights reserved.</p>
-                </div>
-                {if $pageFooter}
-                <div class="col-md-12 col-lg-6 widget-footer">
-                    <div class="row widget-content">
-                        <div style="color: #fff">
-                            {$pageFooter}
-                        </div>
+<footer id="footer" class="footer p-3">
+    <div class="container">
+                <div class="me-md-auto text-center mx-auto">
+                    <div class="copyright">
+                    &copy; Copyright <strong><span>Jahangirnagar University (JU)</span></strong>. All Rights Reserved.
+                    </div>
+                    <div class="credits">
+                    Developed & maintained by <a class="text-light" href="https://library.juniv.edu/">University Library, JU</a>
                     </div>
                 </div>
-                {/if}
-                <div class="col-md-12 col-lg-3" role="complementary">
-                    <a href="{url page="about" op="aboutThisPublishingSystem"}">
-                        <!-- <img class="img-responsive" alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}"> -->
-                    </a>
+            {if $pageFooter}
+                <div style="color: #fff">
+                    {$pageFooter}
                 </div>
-            </div> <!-- .row -->
-        </div>
-    </section>
+            {/if}
+    </div>
 </footer>
-
 
 {load_script context="frontend" scripts=$scripts}
 

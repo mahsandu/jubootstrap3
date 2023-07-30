@@ -15,16 +15,9 @@
   {if $about}
     <section id="cta" class="cta">
       <div class="container">
-
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-start text-justify">
+          <div class="text-center text-lg-start text-justify">
             <p>{$about|strip_tags|nl2br}</p>
           </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Submit an Article</a>
-          </div>
-        </div>
-
       </div>
     </section><!-- End Cta Section -->
   {/if}

@@ -52,14 +52,14 @@
 				</a>
 			</div>
 
-			<div class="form-check">
+			<div class="form-check custom-checkbox">
 				<input class="form-check-input" type="checkbox" name="remember" id="remember" value="1" checked="$remember">
 				<label class="form-check-label" for="remember">
 					{translate key="user.login.rememberUsernameAndPassword"}
 				</label>
 			</div>
 
-			<div class="buttons">
+			<div class="buttons mt-3">
 				<button type="submit" class="btn btn-primary">
 					{translate key="user.login"}
 				</button>

@@ -48,9 +48,9 @@
 				</div>
 
 				<!-- Contact address on the right top -->
-				<div class="contact-address">
-					<p class="mb-0">Contact: contact@example.com | Phone: +123456789</p>
-
+				<div class="contact-address d-flex align-items-center">
+					<i class="bi bi-envelope d-flex align-items-center"><a href="mailto:library@juniv.edu">library@juniv.edu</a></i>
+					<i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:02224491045-51">02224491045-51</a></i>
 				</div>
 				</div>
 			</div>
