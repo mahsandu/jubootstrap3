@@ -8,9 +8,9 @@
 * User registration form.
 *}
 {include file="frontend/components/header.tpl" pageTitle="user.register"}
-{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.register"}
 
 <div class="container">
+{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.register"}
 	<div id="main-content" class="page page_register">
 
 		<form class="pkp_form register" id="register" method="post" action="{url op="register"}">
@@ -85,18 +85,17 @@
 				<fieldset class="consent">
 					{if $siteWidePrivacyStatement}
 						<div class="form-group form-check optin optin-privacy">
-							<input type="checkbox" name="privacyConsent[{\PKP\core\PKPApplication::CONTEXT_ID_NONE}]" id="privacyConsent[{\PKP\core\PKPApplication::CONTEXT_ID_NONE}]" class="form-check-input" value="1"{if $privacyConsent[\PKP\core\PKPApplication::CONTEXT_ID_NONE]} checked{/if}>
-							<label class="form-check-label" for="privacyConsent[{\PKP\core\PKPApplication::CONTEXT_ID_NONE}]">
+							<input type="checkbox" name="privacyConsent[{\PKP\core\PKPApplication::CONTEXT_ID_NONE}]" id="privacyConsentNone" class="form-check-input" value="1"{if $privacyConsent[\PKP\core\PKPApplication::CONTEXT_ID_NONE]} checked{/if}>
+							<label class="form-check-label" for="privacyConsentNone">
 								{capture assign="privacyUrl"}{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="about" op="privacy"}{/capture}
 								{translate key="user.register.form.privacyConsent" privacyUrl=$privacyUrl}
 							</label>
 						</div>
 					{/if}
-
 					{* Ask the user to opt into public email notifications *}
 					<div class="form-group form-check optin optin-email">
-						<input type="checkbox" name="emailConsent" class="form-check-input" id="emailConsent" value="1"{if $emailConsent} checked{/if}>
-						<label class="form-check-label" for="emailConsent">
+						<input type="checkbox" name="emailConsent" class="form-check-input" id="emailConsentNone" value="1"{if $emailConsent} checked{/if}>
+						<label class="form-check-label" for="emailConsentNone">
 							{translate key="user.register.form.emailConsent"}
 						</label>
 					</div>
@@ -125,7 +124,6 @@
 				</a>
 			</div>
 		</form>
-
 	</div><!-- .page -->
 </div><!-- .container -->
 

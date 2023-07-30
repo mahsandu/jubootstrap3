@@ -18,3 +18,27 @@
     text-transform: uppercase;
     transition: 0.3s;
 }
+
+.custom-checkbox .form-check-input:checked ~ .form-check-label::before {
+  border: 1px solid #28a745;
+  background-color: #28a745;
+}
+.custom-checkbox .form-check-input:focus ~ .form-check-label::before {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+.custom-checkbox .form-check-input:checked:focus ~ .form-check-label::before {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+.custom-checkbox .form-check-input:checked::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.custom-checkbox .form-check-input:indeterminate::before {
+  content: "\f05d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.custom-checkbox .form-check-label {
+  padding-left: 40px;
+}
