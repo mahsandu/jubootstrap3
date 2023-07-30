@@ -15,6 +15,7 @@
  * @uses $citationFactory @todo
  * @uses $pubIdPlugins @todo
  *}
+ <div class="container">
 <article class="article-details">
 
     {* Notification that this is an old version *}
@@ -416,3 +417,4 @@
 
 </article>
 
+</div>
