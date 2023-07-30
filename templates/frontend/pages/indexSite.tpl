@@ -25,14 +25,18 @@
 <!-- ======= Cta Section ======= -->
 <!-- ======= journals display Section ======= -->
 <div class="container">
-  	<div class="journals row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-		<div class="page-header w-100 mb-4">
-		<h2 style="font-size: 24px;">
-			{translate key="context.contexts"}
-		</h2>
-		</div>
 
-    	{if !count($journals)}
+    <div class="page-header w-100 my-4">
+      <h2 class="d-flex align-items-center pb-2 border-bottom" style="font-family: 'Muli', sans-serif;">
+        <span class="me-3">
+          <i class="bi bi-bookmark-heart-fill"></i>
+        </span>
+        <strong>{translate key="context.contexts"}</strong>
+      </h2>
+    </div>
+
+  	<div class="journals row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+		 	{if !count($journals)}
       <div class="no_journals">
         {translate key="site.noJournals"}
       </div>
