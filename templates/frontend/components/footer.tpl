@@ -23,22 +23,36 @@
 {/if}
 
 <footer id="footer" class="footer p-3">
-    <div class="container">
-                <div class="me-md-auto text-center mx-auto">
-                    <div class="copyright">
-                    &copy; Copyright <strong><span>Jahangirnagar University (JU)</span></strong>. All Rights Reserved.
-                    </div>
-                    <div class="credits">
-                    Developed & maintained by <a class="text-light" href="https://library.juniv.edu/">University Library, JU</a>
-                    </div>
-                </div>
-            {if $pageFooter}
-                <div style="color: #fff">
-                    {$pageFooter}
-                </div>
-            {/if}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="me-md-auto text-start mx-auto">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Jahangirnagar University (JU)</span></strong>. All Rights Reserved.
+          </div>
+          <div class="credits">
+            Developed & maintained by <a class="text-light" href="https://library.juniv.edu/">University Library, JU</a>
+          </div>
+        </div>
+        {if $pageFooter}
+        <div style="color: #fff">
+          {$pageFooter}
+        </div>
+        {/if}
+      </div>
+      <div class="col-md-6">
+        <!-- Contact address on the right top -->
+        
+        <div class="contact-address d-flex align-items-justify">
+          <a class="text-light"> Contact: </a> <br>
+          <i class="bi bi-envelope d-flex align-items-center"> <a class="text-white" href="mailto:library@juniv.edu">library@juniv.edu</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"> <a class="text-white" href="tel:02224491045-51">02224491045-51</a></i>
+        </div>
+      </div>
     </div>
+  </div>
 </footer>
+
 
 {load_script context="frontend" scripts=$scripts}
 
