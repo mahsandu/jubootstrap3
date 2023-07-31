@@ -44,9 +44,9 @@
         <!-- Contact address on the right top -->
         
         <div class="contact-address d-flex align-items-justify">
-          <a class="text-light"> Contact: </a> <br>
-          <i class="bi bi-envelope d-flex align-items-center"> <a class="text-white" href="mailto:library@juniv.edu">library@juniv.edu</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"> <a class="text-white" href="tel:02224491045-51">02224491045-51</a></i>
+          <a class="text-light"> Contact: </a> &nbsp; &nbsp; <br>
+          <i class="bi bi-envelope d-flex align-items-center"> <a class="text-white" href="mailto:library@juniv.edu"> library@juniv.edu</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"> <a class="text-white" href="tel:02224491045-51"> 02224491045-51</a></i>
         </div>
       </div>
     </div>

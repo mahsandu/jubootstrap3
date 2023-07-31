@@ -18,88 +18,86 @@
  *       homepage
  * @uses $issue Issue Current issue
  *}
-
 {include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
 
-
-  <!-- ======= Cta Section ======= -->
-  {if $journalDescription or $homepageImage}
-  <div class="container-fluid">
-    <section id="cta" class="cta">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-start">
-            <p class="text-justify">{$journalDescription|strip_tags|nl2br}</p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            {if $homepageImage}
-			<div class="homepage-image">
-				<img class="img-fluid" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
-			</div>
-			{/if}
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-</div>
-{/if}
-
 <div class="container">
-	<div id="main-content" class="page_index_journal">
+  <div class="row">
+    <!-- Main Content -->
+    <div class="col-lg-9">
+      <!-- Cta Section -->
+      {if $journalDescription or $homepageImage}
+      <div class="container-fluid">
+        <section id="cta" class="cta">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-9 text-center text-lg-start">
+                <p class="text-justify">{$journalDescription|strip_tags|nl2br}</p>
+              </div>
+              <div class="col-lg-3 cta-btn-container text-center">
+                {if $homepageImage}
+                <div class="homepage-image">
+                  <img class="img-fluid" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+                </div>
+                {/if}
+              </div>
+            </div>
+          </div>
+        </section><!-- End Cta Section -->
+      </div>
+      {/if}
 
-		{call_hook name="Templates::Index::journal"}
-		
-		
+      <div id="main-content" class="page_index_journal">
+        {call_hook name="Templates::Index::journal"}
 
-		
+        <!-- Announcements -->
+        {if $numAnnouncementsHomepage && $announcements|count}
+        <section class="cmp_announcements media">
+          <header class="page-header">
+            <h2>
+              {translate key="announcement.announcements"}
+            </h2>
+          </header>
+          <div class="media-list">
+            {foreach name=announcements from=$announcements item=announcement}
+            {if $smarty.foreach.announcements.iteration > $numAnnouncementsHomepage}
+            {break}
+            {/if}
+            {include file="frontend/objects/announcement_summary.tpl" heading="h3"}
+            {/foreach}
+          </div>
+        </section>
+        {/if}
 
-		<!-- Announcements -->
-		{if $numAnnouncementsHomepage && $announcements|count}
-			<section class="cmp_announcements media">
-				<header class="page-header">
-					<h2>
-						{translate key="announcement.announcements"}
-					</h2>
-				</header>
-				<div class="media-list">
-					{foreach name=announcements from=$announcements item=announcement}
-						{if $smarty.foreach.announcements.iteration > $numAnnouncementsHomepage}
-							{break}
-						{/if}
-						{include file="frontend/objects/announcement_summary.tpl" heading="h3"}
-					{/foreach}
-				</div>
-			</section>
-		{/if}
+        <!-- Latest issue -->
+        {if $issue}
+        <section class="current_issue">
+          <header class="page-header">
+            <h2>
+              {translate key="journal.currentIssue"}
+            </h2>
+          </header>
+          <p class="current_issue_title lead">
+            {$issue->getIssueIdentification()|strip_unsafe_html}
+          </p>
+          {include file="frontend/objects/issue_toc.tpl"}
+          <a href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive"}" class="btn btn-primary read-more">
+            {translate key="journal.viewAllIssues"}
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </section>
+        {/if}
+      </div><!-- .page_index_journal -->
+    </div><!-- .col-lg-9 -->
 
-		<!-- Latest issue -->
-		{if $issue}
-			<section class="current_issue">
-				<header class="page-header">
-					<h2>
-						{translate key="journal.currentIssue"}
-					</h2>
-				</header>
-				<p class="current_issue_title lead">
-					{$issue->getIssueIdentification()|strip_unsafe_html}
-				</p>
-				{include file="frontend/objects/issue_toc.tpl"}
-				<a href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive"}" class="btn btn-primary read-more">
-					{translate key="journal.viewAllIssues"}
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
-			</section>
-		{/if}
-
-		<!-- Additional Homepage Content -->
-		{if $additionalHomeContent}
-			<section class="additional_content">
-				{$additionalHomeContent}
-			</section>
-		{/if}
-	</div><!-- .page_index_journal -->
-</div>
+    <!-- Sidebar -->
+    <div class="col-lg-3">
+      {if $additionalHomeContent}
+      <div class="additional_content">
+        {$additionalHomeContent}
+      </div>
+      {/if}
+    </div><!-- .col-lg-3 -->
+  </div><!-- .row -->
+</div><!-- .container -->
 
 {include file="frontend/components/footer.tpl"}
